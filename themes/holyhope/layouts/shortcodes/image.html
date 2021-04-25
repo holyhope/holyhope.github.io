@@ -1,0 +1,6 @@
+{{- $src := .Get "src" | default (.Get 0) }}
+{{- $title := .Get "title" | default (.Get 1) | default false }}
+{{- $alt := .Get "alt" | default (.Get 2) | default $title }}
+<img loading="lazy" src='{{ path.Dir $src }}/{{ path.Base $src }}' title='{{ $title }}' alt='{{ $alt }}' />
+<img loading="lazy" class="light" src='{{ path.Dir $src }}/light-{{ path.Base $src }}' title='{{ $title }}' alt='{{ $alt }}' />
+<img loading="lazy" class="dark"  src='{{ path.Dir $src }}/dark-{{ path.Base $src }}'  title='{{ $title }}' alt='{{ $alt }}' />

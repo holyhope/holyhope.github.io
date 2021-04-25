@@ -34,6 +34,27 @@ jobs:
           # Download (if necessary) and use Hugo extended version. Example: true
           extended: false
 
+      - name: Image Resizer
+        uses: sharadcodes/img-resizer@v1.1
+        with:
+          image-folder: 'static'
+          new-resolution: '120x120'
+          output-folder: 'static/120x120'
+
+      - name: Scaled image commit
+        run: git add static/120x120 --force
+
+      - name: Optimize images
+        uses: calibreapp/image-actions@main
+        with:
+          compressOnly: true
+          jpegQuality: '80'
+          jpegProgressive: false
+          pngQuality: '80'
+          webpQuality: '80'
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          ignorePaths: '.github,content'
+
       - name: Build
         run: hugo --minify
 

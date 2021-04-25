@@ -1,0 +1,83 @@
+baseURL: https://holyhope.github.io
+languageCode: en-us
+title: "@holyhope"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+
+disqusShortname: holyhope
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: "monokai"
+    tabWidth: 4
+  
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+
+theme:
+- holyhope
+- papermod
+
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
+
+params:
+  env: production
+  description: Personal website
+  author:
+  - "Pierre PÉRONNET <pierre.peronnet@gmail.com>"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: true
+  ShowReadingTime: true
+  disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowToc: true
+
+  homeInfoParams:
+    Title: ""
+    Content: "Pierre PÉRONNET *<pierre.peronnet@gmail.com>*"
+
+  profileMode:
+    enabled: true
+    title: "Welcome to my humble website 👋"
+    subtitle: "This is subtitle"
+    imageUrl: "120x120/me.jpg"
+    buttons:
+    - name: Projects
+      url: "/project"
+    - name: About me
+      url: "/me"
+
+  socialIcons:
+  - name: github
+    url: https://github.com/holyhope
+  - name: linkedin
+    url: https://www.linkedin.com/in/holyhope
+
+imaging:
+  resampleFilter: box
+  quality: 75
+  bgColor: "#ffffff"

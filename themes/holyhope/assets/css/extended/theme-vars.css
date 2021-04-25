@@ -1,0 +1,7 @@
+body.dark img.light {
+    display: none;
+}
+
+img.dark:not(body.dark img) {
+    display: none;
+}
