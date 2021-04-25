@@ -1,0 +1,78 @@
+{{ if .Scratch.Get "needs-chartjs" | default true }}
+{{ .Scratch.Set "needs-chartjs" false }}
+<script id="chartjs-loader" defer="defer" src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js" integrity="sha256-lISRn4x2bHaafBiAb0H5C7mqJli7N0SH+vrapxjIz3k=" crossorigin="anonymous" type="application/javascript"></script>
+<script type="application/javascript">
+{{- with site }}
+  {{- with .Param "chartjs" }}
+    var chartjsColors = {{ .colors }};
+  {{- end }}
+{{- end }}
+</script>
+{{ end }}
+{{- $title := .Get "title" }}
+
+<canvas id='chartjs-{{ $title | anchorize }}' width='{{ .Get "width" | default 400 }}' height='{{ .Get "height" | default 400 }}'></canvas>
+<script defer="defer" type="application/javascript">
+{{- $nbTotal := len .Params | add -1 }}
+{{- $data := getCSV "," (.Get "src") }}
+
+{{- with index $data 0 }}
+  {{- with after 1 . }}
+    {{- with apply . "plainify" "." }}
+      const labels = {{ apply . "humanize" "." }};
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+const data = {
+  labels: labels,
+  datasets: [
+{{ range $i, $d := after 1 $data }}
+    {
+      label: "{{ index $d 0 | plainify }}",
+      data: {{ after 1 $d }},
+      backgroundColor: chartjsColors[{{ $i }}],
+    },
+{{ end }}
+  ]
+};
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: '{{ $title }}'
+      },
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true
+      }
+    }
+  }
+};
+
+document.getElementById("chartjs-loader").addEventListener("load", function() {
+  var stackedBar = new Chart('chartjs-{{ $title | anchorize }}', {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        x: {
+          stacked: false
+        },
+        y: {
+          stacked: false
+        }
+      }
+    }
+  });
+});
+</script>

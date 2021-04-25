@@ -31,6 +31,7 @@ markup:
     startLevel: 2
 
 theme:
+- chartjs
 - holyhope
 - papermod
 
@@ -45,6 +46,16 @@ params:
   description: Personal website
   author:
   - "Pierre PÉRONNET <pierre.peronnet@gmail.com>"
+
+  chartjs:
+    colors: # https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590
+    - '#F94144'
+    - '#F8961E'
+    - '#90BE6D'
+    - '#577590'
+    - '#F3722C'
+    - '#F9C74F'
+    - '#43AA8B'
 
   defaultTheme: auto
   disableThemeToggle: false
