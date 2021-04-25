@@ -33,6 +33,7 @@ markup:
 theme:
 - chartjs
 - holyhope
+- mxgraph
 - papermod
 
 outputs:
@@ -56,6 +57,40 @@ params:
     - '#F3722C'
     - '#F9C74F'
     - '#43AA8B'
+
+  mxgraph:
+    # https://jgraph.github.io/mxgraph/docs/js-api/files/util/mxConstants-js.html
+    edgeStyle:
+      STYLE_FILLCOLOR: 'var(--code-bg)'
+      STYLE_FONTCOLOR: 'var(--content)'
+      STYLE_STROKECOLOR: 'var(--secondary)'
+      STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+    vertexStyle:
+      STYLE_FILLCOLOR: 'var(--code-bg)'
+      STYLE_FONTCOLOR: 'var(--content)'
+      STYLE_STROKECOLOR: 'var(--border)'
+      STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+    cellStyles:
+      edgeLabel:
+        STYLE_FILLCOLOR: 'var(--code-bg)'
+        STYLE_FONTCOLOR: 'var(--primary)'
+        STYLE_STROKECOLOR: 'var(--border)'
+        STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+      ellipse:
+        STYLE_FILLCOLOR: 'var(--code-bg)'
+        STYLE_FONTCOLOR: 'var(--primary)'
+        STYLE_STROKECOLOR: 'var(--border)'
+        STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+      rounded:
+        STYLE_FILLCOLOR: 'var(--code-bg)'
+        STYLE_FONTCOLOR: 'var(--primary)'
+        STYLE_STROKECOLOR: 'var(--border)'
+        STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+      default:
+        STYLE_FILLCOLOR: 'var(--code-bg)'
+        STYLE_FONTCOLOR: 'var(--primary)'
+        STYLE_STROKECOLOR: 'var(--border)'
+        STYLE_FONTFAMILY: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
 
   defaultTheme: auto
   disableThemeToggle: false

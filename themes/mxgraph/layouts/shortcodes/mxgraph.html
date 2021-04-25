@@ -1,0 +1,72 @@
+{{- if .Scratch.Get "needs-mxgraph" | default true -}}
+  {{- .Scratch.Set "needs-mxgraph" false -}}
+  <script type="text/javascript">
+    mxBasePath = 'https://jgraph.github.io/mxgraph/javascript/src';
+  </script>
+  <script src="https://jgraph.github.io/mxgraph/javascript/src/js/mxClient.js"></script>
+  <script id="mxgraph-loader" defer="defer" type="text/javascript">
+    mxStyle = new mxStylesheet();
+    {{- with $.Site.Param "mxgraph" -}}
+      {{- with .edgeStyle -}}
+        var edgeStyle = new Object();
+        {{- range $k, $v := . -}}
+          edgeStyle[mxConstants.{{- upper $k | safeJS -}}] = "{{ $v }}",
+        {{- end -}}
+        mxStyle.putDefaultEdgeStyle(edgeStyle);
+      {{- end -}}
+      {{- with .vertexStyle -}}
+        var vertexStyle = new Object();
+        {{- range $k, $v := . -}}
+          vertexStyle[mxConstants.{{- upper $k | safeJS -}}] = "{{ $v }}",
+        {{- end -}}
+        mxStyle.putDefaultVertexStyle(vertexStyle);
+      {{- end -}}
+      {{- range $name, $style := .cellStyles -}}
+        {{- with $style -}}
+          var cellStyle = new Object();
+          {{- range $k, $v := . -}}
+            cellStyle[mxConstants.{{- upper $k | safeJS -}}] = "{{ $v }}",
+          {{- end -}}
+          mxStyle.putCellStyle('{{ $name }}', cellStyle);
+        {{- end }}
+      {{- end -}}
+    {{- end -}}
+  </script>
+  <link rel="stylesheet" href="https://jgraph.github.io/mxgraph/javascript/src/css/common.css" />
+{{- end -}}
+{{- $title := .Get "title" -}}
+
+<div class="mxgraph-js" id='mxgraph-{{ $title | anchorize }}'></div>
+<script defer="defer" type="application/javascript">
+  {{- $src := .Get "src" | default false }}
+  {{- if $src }}
+    var doc = mxUtils.load("{{ $src }}").getXml();
+  {{- else }}
+    var doc = mxUtils.parseXml("{{- .Inner -}}");
+  {{- end -}}
+
+  var model = new mxGraphModel();
+  model.prefix = 'mxgraph-{{ $title | anchorize }}-';
+  model.beginUpdate()
+  try	{
+    var codec = new mxCodec(doc);
+    codec.decode(doc.getElementsByTagName("mxGraphModel")[0], model);
+  } finally {
+    model.endUpdate();
+  }
+
+  var graph = new mxGraph(null, model, mxConstants.RENDERING_HINT_FASTER, mxStyle);
+  graph.foldingEnabled = false;
+  graph.setResizeContainer(true);
+  graph.setRecursiveResize(true);
+  graph.setCellsSelectable(false);
+  graph.setCellsEditable(false);
+  graph.setCellsDeletable(false);
+  graph.setCellsMovable(false);
+  graph.setVertexLabelsMovable(false);
+  graph.setEdgeLabelsMovable(false);
+
+  graph.init(document.getElementById('mxgraph-{{ $title | anchorize }}'));
+  graph.getView().validate();
+  graph.refresh();
+</script>
