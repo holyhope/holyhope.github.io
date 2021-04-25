@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on @holyhope</title><link>https://holyhope.github.io/project/</link><description>Recent content in Projects on @holyhope</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 21 Apr 2021 17:50:54 +0200</lastBuildDate><atom:link href="https://holyhope.github.io/project/index.xml" rel="self" type="application/rss+xml"/><item><title>Harbor Operator</title><link>https://holyhope.github.io/project/habor-operator/</link><pubDate>Wed, 21 Apr 2021 17:48:23 +0200</pubDate><guid>https://holyhope.github.io/project/habor-operator/</guid><description>A Kubernetes operator to manage Harbor application.
+I developped the Harbor Operator for OVHcloud needs when I was employee.
+https://github.com/goharbor/harbor-operator/
+Goal Manage hundreds of Harbor at scale.
+Technical side A Kubernetes operator is an application that control resource life cycle.
+Architecture Requests flow mxBasePath = 'https://jgraph.github.io/mxgraph/javascript/src'; mxStyle = new mxStylesheet();var edgeStyle = new Object();edgeStyle[mxConstants.STYLE_FILLCOLOR] = "var(--code-bg)",edgeStyle[mxConstants.STYLE_FONTCOLOR] = "var(--content)",edgeStyle[mxConstants.STYLE_FONTFAMILY] = "-apple-system, BlinkMacSystemFont, \u0027Segoe UI\u0027, Roboto, Oxygen, Ubuntu, Cantarell, \u0027Open Sans\u0027, \u0027Helvetica Neue\u0027, sans-serif"</description></item><item><title>My website</title><link>https://holyhope.github.io/project/website/</link><pubDate>Tue, 20 Apr 2021 14:42:50 +0200</pubDate><guid>https://holyhope.github.io/project/website/</guid><description>You are currently viewing this project. The goal is to show an overview of my projects.
+Goal Show to the world an overview of all projects I worked on.
+Technical side Powered by hugo and GitHub Pages.
+Content This repository consist of a collection of Markdown files and static media.
+Media Media hosted on external url are open-licensed.
+My own media are closed-licensed and not reusable. These are stored under the static/ folder and are scaled to the right size in order to be optimized for the web.</description></item></channel></rss>
