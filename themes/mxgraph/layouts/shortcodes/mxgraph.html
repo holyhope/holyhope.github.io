@@ -1,9 +1,9 @@
 {{- if .Scratch.Get "needs-mxgraph" | default true -}}
   {{- .Scratch.Set "needs-mxgraph" false -}}
   <script type="text/javascript">
-    mxBasePath = 'https://jgraph.github.io/mxgraph/javascript/src';
+    mxBasePath = '/mxgraph-4.2.2';
   </script>
-  <script src="https://jgraph.github.io/mxgraph/javascript/src/js/mxClient.js"></script>
+  <script src="/mxgraph-4.2.2/js/mxClient.js"></script>
   <script id="mxgraph-loader" defer="defer" type="text/javascript">
     mxStyle = new mxStylesheet();
     {{- with $.Site.Param "mxgraph" -}}
