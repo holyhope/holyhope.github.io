@@ -110,7 +110,7 @@ params:
     enabled: true
     title: "Welcome to my humble website 👋"
     subtitle: "This is subtitle"
-    imageUrl: "120x120/me.jpg"
+    imageUrl: "150x150/me.jpg"
     buttons:
     - name: Projects
       url: "/project"

@@ -38,11 +38,11 @@ jobs:
         uses: sharadcodes/img-resizer@v1.1
         with:
           image-folder: 'static'
-          new-resolution: '120x120'
-          output-folder: 'static/120x120'
+          new-resolution: '150x150'
+          output-folder: 'static/150x150'
 
       - name: Scaled image commit
-        run: git add static/120x120 --force
+        run: git add static --force
 
       - name: Optimize images
         uses: calibreapp/image-actions@main
