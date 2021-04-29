@@ -1,0 +1,25 @@
+{
+  "name": "hugo-mxgraph",
+  "description": "Hugo theme to add mxGraph javascript library.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/holyhope/holyhope.github.io",
+  "author": {
+    "name": "Pierre PÉRONNET",
+    "email": "pierre.peronnet@gmail.com"
+  },
+  "license": "All right reserved",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holyhope/holyhope.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/holyhope/holyhope.github.io/issues"
+  },
+  "scripts": {
+    "preinstall": "mkdir -p static/mxgraph-4.2.2",
+    "install": "cp -R node_modules/mxgraph/javascript/mxClient.min.js node_modules/mxgraph/javascript/src/css node_modules/mxgraph/javascript/src/resources static/mxgraph-4.2.2/"
+  },
+  "dependencies": {
+    "mxgraph": "^4.2.2"
+  }
+}
