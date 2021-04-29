@@ -5,8 +5,9 @@
     mxLoadResources = false;
     mxLanguage = '{{ .Site.Language.Lang }}';
   </script>
-  <script src="/mxgraph-4.2.2/mxClient.min.js"></script>
-  <script id="mxgraph-loader" defer="defer" type="text/javascript">
+  <script defer="defer" src="/mxgraph-4.2.2/mxClient.min.js" id="mxgraph-loader"></script>
+  <script defer="defer" type="text/javascript">
+  document.getElementById("mxgraph-loader").addEventListener("load", function() {
     mxStyle = new mxStylesheet();
     {{- with $.Site.Param "mxgraph" -}}
       {{- with .edgeStyle -}}
@@ -33,12 +34,14 @@
         {{- end }}
       {{- end -}}
     {{- end -}}
+  })
   </script>
 {{- end -}}
 {{- $title := .Get "title" -}}
 
 <div class="mxgraph-js" id='mxgraph-{{ $title | anchorize }}'></div>
 <script defer="defer" type="application/javascript">
+document.getElementById("mxgraph-loader").addEventListener("load", function() {
   {{- $src := .Get "src" | default false }}
   {{- if $src }}
     var doc = mxUtils.load("{{ $src }}").getXml();
@@ -70,4 +73,5 @@
   graph.init(document.getElementById('mxgraph-{{ $title | anchorize }}'));
   graph.getView().validate();
   graph.refresh();
+})
 </script>
