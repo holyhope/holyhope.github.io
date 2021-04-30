@@ -11,7 +11,7 @@
 {{ end }}
 {{- $title := .Get "title" }}
 
-<canvas id='chartjs-horizontal-bar-{{ $title | anchorize }}' width='{{ .Get "width" | default 400 }}' height='{{ .Get "height" | default 400 }}'></canvas>
+<canvas id='chartjs-radar-{{ $title | anchorize }}' width='{{ .Get "width" | default 400 }}' height='{{ .Get "height" | default 400 }}'></canvas>
 <script defer="defer" type="application/javascript">
   {{- $nbTotal := len .Params | add -1 }}
   {{- $data := 0 }}
@@ -45,28 +45,24 @@
   };
 
   const config = {
-    type: 'bar',
+    type: 'radar',
     data: data,
     options: {
       plugins: {
-        title: {
-          display: true,
-          text: '{{ $title }}'
+        filler: {
+          propagate: false
         },
-      },
-      responsive: true,
-      scales: {
-        x: {
-          stacked: false,
-        },
-        y: {
-          stacked: false
+        'samples-filler-analyser': {
+          target: 'chart-analyser'
         }
+      },
+      interaction: {
+        intersect: false
       }
     }
   };
 
   document.getElementById("chartjs-loader").addEventListener("load", function() {
-    var stackedBar = new Chart('chartjs-horizontal-bar-{{ $title | anchorize }}', config);
+    var stackedBar = new Chart('chartjs-radar-{{ $title | anchorize }}', config);
   });
 </script>
