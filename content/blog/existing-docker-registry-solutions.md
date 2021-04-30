@@ -51,7 +51,14 @@ Cloud native.{{< br >}} Multi-tenant.{{< br >}} content-signing and validation.{
 
 ## Popularity
 
-{{< chartjs/horizontal-bar src=data/projects/ovhcloud/managed-private-registry/popularity.csv title=popularity height=200 >}}
-
+{{< chartjs/horizontal-bar title="Projects popularity" height=200 >}}
+Name,Star,Fork,Watch
+Portus,2148,396,115
+"Official docker registry",4301,1424,281
+Harbor,6138,1695,394
+{{< /chartjs/horizontal-bar >}}
 It was very important to take care of the popularity of each projects.
 Popularities were computed easily but roughly, thanks to GitHub interactions.
+
+Closed source projects popularity could not easily be compared to others.
+That is why [Quay enterprise](#quay-enterprise) and [JFrog](#jfrog) are not in the chart.
