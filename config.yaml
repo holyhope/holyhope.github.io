@@ -108,8 +108,8 @@ params:
 
   profileMode:
     enabled: true
-    title: "Welcome to my humble website 👋"
-    subtitle: "This is subtitle"
+    title: "Welcome 👋"
+    subtitle: "To a French g33k website"
     imageUrl: "150x150/me.jpg"
     buttons:
     - name: Projects
