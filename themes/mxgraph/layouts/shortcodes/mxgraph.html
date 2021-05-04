@@ -52,13 +52,9 @@ document.getElementById("mxgraph-loader").addEventListener("load", function() {
 
   var model = new mxGraphModel();
   model.prefix = 'mxgraph-{{ $title | anchorize }}-';
-  model.beginUpdate()
-  try	{
-    var codec = new mxCodec(doc);
-    codec.decode(doc.getElementsByTagName("mxGraphModel")[0], model);
-  } finally {
-    model.endUpdate();
-  }
+
+  var codec = new mxCodec(doc);
+  codec.decode(doc.getElementsByTagName("mxGraphModel")[0], model);
 
   var graph = new mxGraph(null, model, mxConstants.RENDERING_HINT_FASTER, mxStyle);
   graph.foldingEnabled = false;
