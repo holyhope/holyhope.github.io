@@ -111,6 +111,8 @@ params:
     title: "Welcome 👋"
     subtitle: "To a French g33k website"
     imageUrl: "150x150/me.jpg"
+    imageHeight: 150
+    imageWidth: 150
     buttons:
     - name: Projects
       url: "/project"
@@ -120,8 +122,16 @@ params:
   socialIcons:
   - name: github
     url: https://github.com/holyhope
+  - name: email
+    url: mailto:pierre.peronnet@gmail.com
+  #- name: telegram
+  #  url: https://t.me/pierresanseux
+  #- name: stackoverflow
+  #  url: https://stackoverflow.com/users/13235452/
   - name: linkedin
     url: https://www.linkedin.com/in/holyhope
+  - name: slack
+    url: https://cloud-native.slack.com/team/UM6BNH0B0
 
 imaging:
   resampleFilter: box
