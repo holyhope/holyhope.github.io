@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram name="sample-graph-dependency">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- pod -->
+        <mxCell id="pod" value="Apache pod" vertex="1" parent="1">
+          <mxGeometry x="125" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- deployment -->
+        <mxCell id="deployment-pod" edge="1" parent="1" source="deployment" target="pod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="deployment" value="Apache deployment" parent="1" vertex="1">
+          <mxGeometry x="100" y="210" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- apacheconfig -->
+        <mxCell id="apacheconfig-deployment" parent="1" source="apacheconfig" target="deployment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="apacheconfig" value="Apache configMap" parent="1" vertex="1">
+          <mxGeometry x="10" y="120" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!--appconfig -->
+        <mxCell id="appconfig-deployment" parent="1" source="appconfig" target="deployment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="appconfig" value="Application configMap" parent="1" vertex="1">
+          <mxGeometry x="206" y="120" width="150" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- htpassword -->
+        <mxCell id="htpassword-deployment" parent="1" source="htpassword" target="deployment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="htpassword" value=".htpassword configMap" parent="1" vertex="1">
+          <mxGeometry x="400" y="120" width="150" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- webapp resource -->
+        <mxCell id="webapp-deployment" parent="1" source="webapp" target="deployment" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="149.11884378897844" y="81.55879110185128" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="webapp-htpassword" parent="1" source="webapp" target="htpassword" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp-appconfig" parent="1" source="webapp" target="appconfig" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp-apacheconfig" parent="1" source="webapp" target="apacheconfig" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="webapp" value="Custom resource defining a webapp" parent="1" vertex="1">
+          <mxGeometry x="50" y="10" width="250" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
