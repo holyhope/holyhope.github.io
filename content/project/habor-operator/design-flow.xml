@@ -1,136 +1,141 @@
-<mxGraphModel>
-  <root>
-    <mxCell id="0" />
-    <mxCell id="1" parent="0" />
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram name="sample-request-flow">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
 
-    <!-- Life lines -->
-    <mxCell id="harbor-operator" value="Harbor Operator" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
-      <mxGeometry x="58" y="0" width="1" height="510" as="geometry" />
-    </mxCell>
-    <mxCell id="control-plane" value="K8S control plane" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
-      <mxGeometry x="208" y="0" width="1" height="510" as="geometry" />
-    </mxCell>
-    <mxCell id="kubelet" value="Kubelet" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
-      <mxGeometry x="358" y="0" width="1" height="510" as="geometry" />
-    </mxCell>
-    <mxCell id="containerd" value="Containerd" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
-      <mxGeometry x="508" y="0" width="1" height="510" as="geometry" />
-    </mxCell>
-    <mxCell id="harbor-container" value="Harbor Container" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
-      <mxGeometry x="658" y="0" width="1" height="510" as="geometry" />
-    </mxCell>
+        <!-- Life lines -->
+        <mxCell id="harbor-operator" value="Harbor Operator" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="58" y="0" width="1" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="control-plane" value="K8S control plane" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="208" y="0" width="1" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="kubelet" value="Kubelet" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="358" y="0" width="1" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="containerd" value="Containerd" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="508" y="0" width="1" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="harbor-container" value="Harbor Container" style="fontSize=15;shape=umlLifeline;perimeter=lifelinePerimeter;container=1;recursiveResize=0;outlineConnect=0;rounded=1;comic=0;strokeWidth=1;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="658" y="0" width="1" height="510" as="geometry" />
+        </mxCell>
 
-    <!-- Events -->
-    <mxCell id="harbor-reconciliation" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-operator" vertex="1">
-      <mxGeometry x="-5" y="50" width="11" height="60" as="geometry" />
-    </mxCell>
-    <mxCell id="put-resource" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
-      <mxGeometry x="-5" y="60" width="11" height="40" as="geometry" />
-    </mxCell>
-    <mxCell id="get-pods" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
-      <mxGeometry x="-5" y="140" width="11" height="40" as="geometry" />
-    </mxCell>
-    <mxCell id="kubelet-loop-create" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="kubelet" vertex="1">
-      <mxGeometry x="-5" y="130" width="11" height="110" as="geometry" />
-    </mxCell>
-    <mxCell id="create-container" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="containerd" vertex="1">
-      <mxGeometry x="-5" y="190" width="11" height="60" as="geometry" />
-    </mxCell>
-    <mxCell id="kubelet-loop-update" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="kubelet" vertex="1">
-      <mxGeometry x="-5" y="300" width="11" height="110" as="geometry" />
-    </mxCell>
-    <mxCell id="health-request" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-container" vertex="1">
-      <mxGeometry x="-5" y="310" width="11" height="40" as="geometry" />
-    </mxCell>
-    <mxCell id="update-pod-status" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
-      <mxGeometry x="-5" y="360" width="11" height="40" as="geometry" />
-    </mxCell>
-    <mxCell id="operator-triggered" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-operator" vertex="1">
-      <mxGeometry x="-5" y="380" width="11" height="110" as="geometry" />
-    </mxCell>
-    <mxCell id="get-resource-status" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
-      <mxGeometry x="-5" y="430" width="11" height="40" as="geometry" />
-    </mxCell>
+        <!-- Events -->
+        <mxCell id="harbor-reconciliation" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-operator" vertex="1">
+          <mxGeometry x="-5" y="50" width="11" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="put-resource" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
+          <mxGeometry x="-5" y="60" width="11" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="get-pods" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
+          <mxGeometry x="-5" y="140" width="11" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kubelet-loop-create" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="kubelet" vertex="1">
+          <mxGeometry x="-5" y="130" width="11" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="create-container" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="containerd" vertex="1">
+          <mxGeometry x="-5" y="190" width="11" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kubelet-loop-update" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="kubelet" vertex="1">
+          <mxGeometry x="-5" y="300" width="11" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="health-request" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-container" vertex="1">
+          <mxGeometry x="-5" y="310" width="11" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="update-pod-status" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
+          <mxGeometry x="-5" y="360" width="11" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="operator-triggered" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="harbor-operator" vertex="1">
+          <mxGeometry x="-5" y="380" width="11" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="get-resource-status" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;comic=0;strokeWidth=1;align=center;" parent="control-plane" vertex="1">
+          <mxGeometry x="-5" y="430" width="11" height="40" as="geometry" />
+        </mxCell>
 
-    <!-- Requests -->
-    <mxCell id="put-resource-start" value="Put resources" style="verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;edgeStyle=elbowEdgeStyle;elbow=vertical;" parent="put-resource" edge="1">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="-139" y="0" as="sourcePoint" />
-        <mxPoint x="0" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="put-resource-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.2;entryY=0.089;entryDx=0;entryDy=0;entryPerimeter=0;" parent="put-resource" edge="1">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="0" y="40" as="sourcePoint" />
-        <mxPoint x="-140" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="fetch-pods-start" value="Fetch pods to create" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="get-pods" edge="1">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="160" y="0" as="sourcePoint" />
-        <mxPoint x="10" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="fetch-pods-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=0;entryY=0.455;entryDx=0;entryDy=0;entryPerimeter=0;" parent="get-pods" edge="1">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="10" y="40" as="sourcePoint" />
-        <mxPoint x="150" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="create-container-start" value="Create containers" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="create-container">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="-140" y="0" as="sourcePoint" />
-        <mxPoint x="0" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="create-container-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.4;entryY=0.745;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.2;exitY=0.178;exitDx=0;exitDy=0;exitPerimeter=0;" parent="create-container" edge="1">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="0" y="40" as="sourcePoint" />
-        <mxPoint x="-140" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="health-request-start" value="Fetch health endpoint" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="health-request">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="-289" y="0" as="sourcePoint" />
-        <mxPoint x="0" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="health-request-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.2;exitY=0.178;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="health-request">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="0" y="40" as="sourcePoint" />
-        <mxPoint x="-290" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="update-pod-status-start" value="Update pods status" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="update-pod-status">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="150" y="0" as="sourcePoint" />
-        <mxPoint x="10" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="update-pod-status-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=0;entryY=0.455;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="update-pod-status">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="10" y="40" as="sourcePoint" />
-        <mxPoint x="150" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="operator-triggered-start" value="Trigger event" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="operator-triggered">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="150" y="0" as="sourcePoint" />
-        <mxPoint x="10" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <!-- No operator-triggered-end -->
-    <mxCell id="get-resource-status-start" value="Get resource status" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="get-resource-status">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="-139" y="0" as="sourcePoint" />
-        <mxPoint x="0" y="0" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="get-resource-status-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.2;entryY=0.089;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="get-resource-status">
-      <mxGeometry relative="1" as="geometry">
-        <mxPoint x="0" y="40" as="sourcePoint" />
-        <mxPoint x="-140" y="40" as="targetPoint" />
-      </mxGeometry>
-    </mxCell>
-  </root>
-</mxGraphModel>
+        <!-- Requests -->
+        <mxCell id="put-resource-start" value="Put resources" style="verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;edgeStyle=elbowEdgeStyle;elbow=vertical;" parent="put-resource" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-139" y="0" as="sourcePoint" />
+            <mxPoint x="0" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="put-resource-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.2;entryY=0.089;entryDx=0;entryDy=0;entryPerimeter=0;" parent="put-resource" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="40" as="sourcePoint" />
+            <mxPoint x="-140" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fetch-pods-start" value="Fetch pods to create" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="get-pods" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="0" as="sourcePoint" />
+            <mxPoint x="10" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fetch-pods-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=0;entryY=0.455;entryDx=0;entryDy=0;entryPerimeter=0;" parent="get-pods" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="40" as="sourcePoint" />
+            <mxPoint x="150" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="create-container-start" value="Create containers" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="create-container">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-140" y="0" as="sourcePoint" />
+            <mxPoint x="0" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="create-container-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.4;entryY=0.745;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.2;exitY=0.178;exitDx=0;exitDy=0;exitPerimeter=0;" parent="create-container" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="40" as="sourcePoint" />
+            <mxPoint x="-140" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="health-request-start" value="Fetch health endpoint" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="health-request">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-289" y="0" as="sourcePoint" />
+            <mxPoint x="0" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="health-request-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.2;exitY=0.178;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="health-request">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="40" as="sourcePoint" />
+            <mxPoint x="-290" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="update-pod-status-start" value="Update pods status" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="update-pod-status">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="0" as="sourcePoint" />
+            <mxPoint x="10" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="update-pod-status-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=0;entryY=0.455;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="update-pod-status">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="40" as="sourcePoint" />
+            <mxPoint x="150" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="operator-triggered-start" value="Trigger event" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="operator-triggered">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="0" as="sourcePoint" />
+            <mxPoint x="10" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- No operator-triggered-end -->
+        <mxCell id="get-resource-status-start" value="Get resource status" style="verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;" edge="1" parent="get-resource-status">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-139" y="0" as="sourcePoint" />
+            <mxPoint x="0" y="0" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="get-resource-status-end" value="return" style="verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;entryX=1.2;entryY=0.089;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="get-resource-status">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="40" as="sourcePoint" />
+            <mxPoint x="-140" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
