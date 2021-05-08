@@ -19,36 +19,36 @@ Then I onboarded more people, developped an [operator](../../harbor-operator) an
 
 ### Bootstrap
 
-1. December 2018 - Start
+1. December 2018 — Start
 
-   propose a dedicated private registry.
+   Propose a dedicated private registry.
 
-2. February 2019 - Project approved
+2. February 2019 — Project approved
 
    Go for [Harbor](#harbor).
 
-3. March 2019 - Proof Of Concept
+3. March 2019 — Proof Of Concept
 
    API which deploys/deletes a set of kubernetes resources.
 
 ### Beta
 
-1. June 2019 - Public Beta opening.
+1. June 2019 — Public Beta opening.
 
    Endpoint on [APIv6](https://api.ovh.com) to deploy/delete a bunch of kubernetes resources.
 
 ### Production
 
-1. January 2020 - Production ready
+1. January 2020 — Production ready
 
    Global Availability.
 
-2. March 2021 - Harbor Update
+2. March 2021 — Harbor Update
 
    Update to 2.0.
 
 ## Technical side
 
-Harbor was chosen as product after an [analysis of existing solutions]({{< ref "/blog/existing-docker-registry-solutions" >}}).
+[Harbor](https://goharbor.io) was chosen as product after an [analysis of existing solutions]({{< ref "/blog/existing-docker-registry-solutions" >}}).
 
 ### Kubernetes & Operator
